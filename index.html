@@ -55,7 +55,15 @@
       document.getElementsByClassName('three')[0].className = "hidden";
     }
     else {
-      // Error message
+      if (slides === 0) {
+        document.getElementById('input-one').className = "wrong";
+      }
+      else if (slides === 1) {
+        document.getElementById('input-two').className = "wrong";
+      }
+      else if (slides === 2) {
+        document.getElementById('input-three').className = "wrong";
+      }
     }
   }
 </script>
