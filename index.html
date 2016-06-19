@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hi Dad!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Coming+Soon|Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+  <main>
+    <div class="slide one">
+      <h2>What is your spirit animal?</h2>
+      <input type="text" id="input-one"></input>
+      <button onclick="checkAnswer()">Go</button>
+    </div>
+
+    <div class="slide two">
+      <h2>Best hot chocolate?</h2>
+      <input type="text" id="input-two"></input>
+      <button onclick="checkAnswer()">Check answer</button>
+    </div>
+
+    <div class="slide three">
+      <h2>Next number in this series? 4, 6, 12, 18, 30, 42, 60, 72, 102, 108 ...</h2>
+      <input type="text" id="input-three"></input>
+      <button onclick="checkAnswer()">Almost there...</button>
+    </div>
+
+    <div class="slide revealed">
+      <img src="hi-dad.png">
+      <h2>Happy Father's Day!</h2>
+      <p>I hope you've enjoyed this little game.</p>
+      <p>Sorry I cannot be there in person this time. But on the plus side, the Remain campaign has one more campaigner, and you don't need to figure out where on earth to store this card.</p>
+      <p>Thank you for being the most awesomest dad.</p>
+      <p>Lots of love,<br>Jen</p>
+
+    </div>
+  </main>
+
+
+<script>
+  var slides = 0;
+  function checkAnswer() {
+    if (slides === 0 && document.getElementById('input-one').value.match(/(?:a )?bear/i) ) {
+      slides++;
+      document.getElementsByClassName('one')[0].className = "hidden";
+    }
+    else if (slides === 1 && document.getElementById('input-two').value.match(/(?:m(?:&|and)s|m (?:&|and) s|marks(?:&|and)spencer|marks (?:&|and) spencer)(?:'?s)?/i)) {
+      slides++;
+      document.getElementsByClassName('two')[0].className = "hidden";
+    }
+    else if (slides === 2 && document.getElementById('input-three').value === "138") {
+      slides++;
+      document.getElementsByClassName('three')[0].className = "hidden";
+    }
+    else {
+      // Error message
+    }
+  }
+</script>
+</body>
+</html>
